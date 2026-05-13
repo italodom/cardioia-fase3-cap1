@@ -1,0 +1,25 @@
+# CardioIA - Fase 3 Cap 1
+# Sobe o Node-RED para o dashboard do projeto.
+#
+# Uso (a partir desta pasta node-red/):
+#   docker compose up -d        # sobe em background
+#   docker compose logs -f      # acompanha logs
+#   docker compose down         # derruba
+#
+# Apos subir:
+#   1. Abrir http://localhost:1880
+#   2. Menu hamburger -> Manage palette -> Install -> node-red-dashboard
+#   3. Menu hamburger -> Import -> escolher ./flow.json -> Deploy
+#   4. Dashboard em http://localhost:1880/ui
+
+services:
+  nodered:
+    image: nodered/node-red:latest
+    container_name: cardioia-nodered
+    ports:
+      - "1880:1880"
+    volumes:
+      - ./data:/data
+    environment:
+      - TZ=America/Sao_Paulo
+    restart: unless-stopped

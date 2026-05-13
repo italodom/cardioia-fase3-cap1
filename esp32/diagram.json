@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "Italo Domingues",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -150, "left": 250, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "btn1", "top": 100, "left": 250, "attrs": { "color": "red", "label": "BPM" } },
+    { "type": "wokwi-slide-switch", "id": "sw1", "top": 200, "left": 250, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -200, "left": -150, "attrs": { "color": "red", "label": "ALERTA" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": -150, "left": -200, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "dht1:VCC", "esp:3V3",   "red",   [] ],
+    [ "dht1:GND", "esp:GND.1", "black", [] ],
+    [ "dht1:SDA", "esp:D15",   "green", [] ],
+    [ "btn1:1.l", "esp:GND.2", "black", [] ],
+    [ "btn1:2.l", "esp:D4",    "green", [] ],
+    [ "sw1:1",    "esp:GND.3", "black", [] ],
+    [ "sw1:2",    "esp:D5",    "green", [] ],
+    [ "led1:A",   "r1:1",      "red",   [] ],
+    [ "r1:2",     "esp:D2",    "red",   [] ],
+    [ "led1:C",   "esp:GND.1", "black", [] ]
+  ],
+  "dependencies": {}
+}

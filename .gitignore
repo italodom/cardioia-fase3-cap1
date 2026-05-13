@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Wokwi/PlatformIO local
+.pio/
+build/
+
+# Node-RED Docker volume
+node-red/data/
+
+ItaloDomingues_RM561787_fase3_cap1.txt
